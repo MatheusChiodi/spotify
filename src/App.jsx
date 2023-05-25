@@ -9,6 +9,7 @@ import EditorPicks from './components/EditorPicks';
 import Artists from './components/Artists';
 import { PlayCircle, PlusCircle } from 'lucide-react';
 import NewSongsAdded from './components/NewSongsAdded';
+import JumpBackIn from './components/JumpBackIn';
 
 function App() {
   const [isExpanded, setIsExpanded] = useState(true);
@@ -74,6 +75,7 @@ function App() {
                 </div>
                 <div className='px-3 sm:px-6 mt-3'>
                   <NewSongsAdded />
+                  <JumpBackIn />
                 </div>
               </div>
             </div>

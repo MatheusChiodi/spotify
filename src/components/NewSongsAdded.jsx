@@ -1,12 +1,38 @@
-import { PauseCircle, PlayCircle, PlusCircle, SkipBack, SkipForward} from 'lucide-react';
-import { useState } from 'react';
-import { useRef } from 'react';
+import { PauseCircle, PlayCircle, PlusCircle, SkipBack, SkipForward } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
 
-export default function NewSongsAdded() {  
+export default function NewSongsAdded() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [isSeeking, setIsSeeking] = useState(false);
   const audioRef = useRef(null);
+
+  useEffect(() => {
+    const handleMouseMove = (event) => {
+      if (!isSeeking) return;
+      const progressBar = document.getElementById('progress-bar');
+      const progressBarWidth = progressBar.offsetWidth;
+      const offsetX = event.pageX - progressBar.getBoundingClientRect().left;
+      const durationInSeconds = duration;
+      const newCurrentTime = (offsetX / progressBarWidth) * durationInSeconds;
+      setCurrentTime(newCurrentTime);
+    };
+
+    const handleMouseUp = () => {
+      if (!isSeeking) return;
+      setIsSeeking(false);
+      audioRef.current.currentTime = currentTime;
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, [isSeeking, currentTime, duration]);
 
   const handlePlayPause = () => {
     if (isPlaying) {
@@ -18,11 +44,11 @@ export default function NewSongsAdded() {
   };
 
   function play() {
-    document.getElementById('song').play();
+    audioRef.current.play();
   }
 
   function pause() {
-    document.getElementById('song').pause();
+    audioRef.current.pause();
   }
 
   const handleTimeUpdate = () => {
@@ -32,6 +58,10 @@ export default function NewSongsAdded() {
   const handleLoadedMetadata = () => {
     setDuration(audioRef.current.duration);
   };
+
+  function handleMouseDown() {
+    setIsSeeking(true);
+  }
 
   function seek(event) {
     const progressBar = event.target;
@@ -84,7 +114,7 @@ export default function NewSongsAdded() {
           </div>
         </div>
         {isPlaying ? (
-          <div className="absolute bottom-3 inset-x-0 flex flex-col items-center justify-center w-[300px] mx-auto bg-[#303030] border-x border-t border-gray-500 rounded-t-md">
+          <div className="absolute bottom-0 inset-x-0 flex flex-col items-center justify-center w-[300px] mx-auto bg-[#303030] border-x border-t border-gray-500 rounded-t-md">
             <div className="flex items-center justify-center mt-1">
               <SkipBack
                 size={20}
@@ -116,9 +146,11 @@ export default function NewSongsAdded() {
               <div
                 className="w-full h-2 bg-gray-200 rounded overflow-hidden mt-2 cursor-pointer"
                 onClick={seek}
+                onMouseDown={handleMouseDown}
+                id="progress-bar"
               >
                 <div
-                  className="h-full bg-green-500"
+                  className="h-full bg-green-500 cursor-pointer"
                   style={{ width: `${(currentTime / duration) * 100}%` }}
                 />
               </div>

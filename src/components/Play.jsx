@@ -33,6 +33,16 @@ export default function Play() {
     setDuration(audioRef.current.duration);
   };
 
+  function seek(event) {
+    const progressBar = event.target;
+    const progressBarWidth = progressBar.offsetWidth;
+    const offsetX = event.nativeEvent.offsetX;
+    const durationInSeconds = duration;
+    const newCurrentTime = (offsetX / progressBarWidth) * durationInSeconds;
+    setCurrentTime(newCurrentTime);
+    audioRef.current.currentTime = newCurrentTime;
+  }
+
   return (
     <div className="bg-[#343434] rounded-xl p-2 w-[97%] mt-1 h-[100%] flex flex-col items-center justify-center">
       <div className="w-full">
@@ -88,9 +98,9 @@ export default function Play() {
         <p className="text-[10px] me-1 mb-[-10px]">
           {Math.floor(currentTime / 60)}:{Math.floor(currentTime % 60)}
         </p>
-        <div className="w-full h-1 bg-gray-200 rounded overflow-hidden mt-2 ">
+        <div className="w-full h-1 bg-gray-200 rounded overflow-hidden mt-2 cursor-pointer" onClick={seek}>
           <div
-            className="h-full bg-green-500"
+            className="h-full bg-green-500 cursor-pointer"
             style={{ width: `${(currentTime / duration) * 100}%` }}
           />
         </div>
