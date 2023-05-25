@@ -33,6 +33,16 @@ export default function NewSongsAdded() {
     setDuration(audioRef.current.duration);
   };
 
+  function seek(event) {
+    const progressBar = event.target;
+    const progressBarWidth = progressBar.offsetWidth;
+    const offsetX = event.nativeEvent.offsetX;
+    const durationInSeconds = duration;
+    const newCurrentTime = (offsetX / progressBarWidth) * durationInSeconds;
+    setCurrentTime(newCurrentTime);
+    audioRef.current.currentTime = newCurrentTime;
+  }
+
   return (
     <>
       <h1 className='text-gray-50 font-bold'>
@@ -63,53 +73,56 @@ export default function NewSongsAdded() {
               />
             )}
             <audio
-            ref={audioRef}
-            src="music.mp3"
-            controls
-            className="hidden"
-            id="song"
-            onTimeUpdate={handleTimeUpdate}
-            onLoadedMetadata={handleLoadedMetadata}
-          />
+              ref={audioRef}
+              src="music.mp3"
+              controls
+              className="hidden"
+              id="song"
+              onTimeUpdate={handleTimeUpdate}
+              onLoadedMetadata={handleLoadedMetadata}
+            />
           </div>
         </div>
         {isPlaying ? (
-          <div className="absolute bottom-0 inset-x-0 flex flex-col items-center justify-center w-[300px] mx-auto bg-[#303030] border-x border-t border-gray-500 rounded-t-md">
+          <div className="absolute bottom-3 inset-x-0 flex flex-col items-center justify-center w-[300px] mx-auto bg-[#303030] border-x border-t border-gray-500 rounded-t-md">
             <div className="flex items-center justify-center mt-1">
               <SkipBack
-                size={15}
+                size={20}
                 className="text-gray-50 hover:text-gray-400 cursor-pointer me-1 duration-300"
               />
               {isPlaying ? (
                 <PauseCircle
-                  size={20}
+                  size={30}
                   className={`text-gray-50 hover:text-gray-400 cursor-pointer duration-300 $`}
                   onClick={handlePlayPause}
                 />
               ) : (
                 <PlayCircle
-                  size={20}
+                  size={30}
                   className={`text-gray-50 hover:text-gray-400 cursor-pointer duration-300 $`}
                   onClick={handlePlayPause}
                 />
               )}
 
               <SkipForward
-                size={15}
+                size={20}
                 className="text-gray-50 hover:text-gray-400 cursor-pointer ms-1 duration-300"
               />
             </div>
-            <div className="flex w-full justify-center items-center my-1 m-0 p-0 text-gray-50 px-3">
-              <p className="text-[10px] me-1 mb-[-10px]">
+            <div className="flex w-full justify-center items-center mb-2 m-0 p-0 text-gray-50 px-3">
+              <p className="text-xs me-1 mb-[-10px]">
                 {Math.floor(currentTime / 60)}:{Math.floor(currentTime % 60)}
               </p>
-              <div className="w-full h-1 bg-gray-200 rounded overflow-hidden mt-2 ">
+              <div
+                className="w-full h-2 bg-gray-200 rounded overflow-hidden mt-2 cursor-pointer"
+                onClick={seek}
+              >
                 <div
                   className="h-full bg-green-500"
                   style={{ width: `${(currentTime / duration) * 100}%` }}
                 />
               </div>
-              <p className="text-[10px] ms-1 mb-[-10px]">
+              <p className="text-xs ms-1 mb-[-10px]">
                 {Math.floor(duration / 60)}:{Math.floor(duration % 60)}
               </p>
             </div>
