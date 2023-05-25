@@ -8,6 +8,7 @@ import NewReleases from './components/NewReleases';
 import EditorPicks from './components/EditorPicks';
 import Artists from './components/Artists';
 import { PlayCircle, PlusCircle } from 'lucide-react';
+import NewSongsAdded from './components/NewSongsAdded';
 
 function App() {
   const [isExpanded, setIsExpanded] = useState(true);
@@ -72,28 +73,11 @@ function App() {
                   
                 </div>
                 <div className='px-3 sm:px-6 mt-3'>
-                  <h1 className='text-gray-50 font-bold'>
-                    New songs added
-                  </h1>
-                  <div className='w-[100%] flex mt-3 mb-2 items-center bg-[#303030] rounded-md hover:bg-[#373737] transition-all cursor-pointer duration-700'>
-                    <div className='w-[120px]'>
-                      <img src='perfil.jpeg' className="w-[120px] h-[120px] rounded-s-md" />
-                    </div>
-                    <div className='ms-3'>
-                      <h1 className='text-gray-50 font-bold text-[14px]'>Today-s Top Hits</h1>
-                      <p className='text-gray-500 text-[10px] pe-3'>
-                        Playlist • Bad Bunny is on top of the Hottest 50!
-                      </p>
-                      <div className='flex justify-between items-center pe-2 mt-2'>
-                        <PlusCircle className='text-gray-500 hover:text-gray-50 transition-all cursor-pointer duration-700' size={20} />
-                        <PlayCircle className='text-gray-50 hover:text-green-500  transition-all cursor-pointer duration-700' size={30} />
-                      </div>
-                    </div>
-                    
-                  </div>
+                  <NewSongsAdded />
                 </div>
               </div>
             </div>
+            
           </div>
         ) : (
           <div className="h-[80%] w-[90%] xl:w-[60%] bg-[#303030] rounded-3xl p-3">
