@@ -10,6 +10,7 @@ import Artists from './components/Artists';
 import { PlayCircle, PlusCircle } from 'lucide-react';
 import NewSongsAdded from './components/NewSongsAdded';
 import JumpBackIn from './components/JumpBackIn';
+import PlayList from './components/PlayList';
 
 function App() {
   const [isExpanded, setIsExpanded] = useState(true);
@@ -58,21 +59,7 @@ function App() {
                     Podcasts & Shows
                   </p>
                 </div>
-                <div className='grid grid-cols-2 px-3 sm:px-6 mt-3'>
-                  <div className='mb-2 flex items-center bg-[#303030] rounded-md hover:bg-[#373737] transition-all cursor-pointer duration-700'>
-                    <img src='perfil.jpeg' className="w-[60px] h-[60px] rounded-s-md" />
-                    <p className='ms-3 text-gray-50 font-bold text-[14px] sm:text-[20px] transition-all duration-300'>
-                      Nome da PlayList
-                    </p>
-                  </div>
-                  <div className='mb-2 ms-2 flex items-center bg-[#303030] rounded-md hover:bg-[#373737] transition-all cursor-pointer duration-700'>
-                    <img src='perfil.jpeg' className="w-[60px] h-[60px] rounded-s-md" />
-                    <p className='ms-3 text-gray-50 font-bold text-[14px] sm:text-[20px] transition-all duration-300'>
-                      Nome da PlayList
-                    </p>
-                  </div>
-                  
-                </div>
+                <PlayList />
                 <div className='px-3 sm:px-6 mt-3'>
                   <NewSongsAdded />
                   <JumpBackIn />
