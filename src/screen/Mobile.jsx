@@ -1,7 +1,7 @@
-import Header from "../components/Header";
-import ListMusic from "../components/Mobile/ListMusic";
-import NewSongsAdded from "../components/Mobile/NewSongsAdded";
-import PlayList from "../components/Mobile/PlayList";
+import Header from '../components/Header';
+import ListMusic from '../components/ListMusic';
+import NewSongsAdded from '../components/NewSongsAdded';
+import PlayList from '../components/PlayList';
 
 export default function Mobile() {
   return (
@@ -17,27 +17,26 @@ export default function Mobile() {
           </p>
         </div>
         <PlayList />
-        <div className='px-3 sm:px-6 mt-3'>
+        <div className="px-3 sm:px-6 mt-3">
           <NewSongsAdded />
-          <div className='m-0 p-0 mb-3'>
+          <div className="m-0 p-0 mb-3">
             <h1 className="text-gray-50 font-medium text-[18px] m-0 p-0">
               New Releases
             </h1>
             <ListMusic />
           </div>
-          <div className='m-0 p-0 mb-3'>
+          <div className="m-0 p-0 mb-3">
             <h1 className="text-gray-50 font-medium text-[18px] m-0 p-0">
               New Releases
             </h1>
             <ListMusic />
           </div>
-          <div className='m-0 p-0 mb-3'>
+          <div className="m-0 p-0 mb-3">
             <h1 className="text-gray-50 font-medium text-[18px] m-0 p-0">
               New Releases
             </h1>
             <ListMusic />
           </div>
-         
         </div>
       </div>
     </>

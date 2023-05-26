@@ -1,10 +1,10 @@
 import Header from "../components/Header";
-import Music from "../components/Pc/Musics";
-import TypesMusic from "../components/Pc/TypesMusic";
-import Play from "../components/Pc/Play";
-import NewReleases from "../components/Pc/NewReleases";
-import EditorPicks from "../components/Pc/EditorPicks";
-import Artists from "../components/Pc/Artists";
+import Music from "../components/Musics";
+import TypesMusic from "../components/TypesMusic";
+import Play from "../components/Play";
+import NewReleases from "../components/NewReleases";
+import EditorPicks from "../components/EditorPicks";
+import Artists from "../components/Artists";
 
 import { useState } from "react";
 
