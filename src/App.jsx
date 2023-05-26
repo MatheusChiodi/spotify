@@ -1,5 +1,4 @@
 import { useState,useEffect  } from 'react';
-import Mobile from './screen/Mobile';
 import Pc from './screen/PC';
 
 function App() {
@@ -31,7 +30,11 @@ function App() {
     <>
       <div className="w-full h-screen flex items-center justify-center">
         {screenSize === 'md' ? ( 
-         <></>
+          <div className="h-[100%] w-[100%] bg-[#303030] p-3">
+            <div className="m-0 p-0 bg-[#232323] h-[100%] w-[100%] mx-auto rounded-md">
+              
+            </div>
+          </div>
         ) : (
           <div className="h-[80%] w-[90%] xl:w-[60%] bg-[#303030] rounded-3xl p-3">
             <div className="m-0 p-0 bg-[#232323] h-[100%] w-[100%] mx-auto rounded-md">
