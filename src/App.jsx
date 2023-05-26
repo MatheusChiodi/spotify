@@ -1,24 +1,12 @@
 import { useState,useEffect  } from 'react';
 
 import Header from './components/Header';
-import TypesMusic from './components/TypesMusic';
-import Music from './components/Musics';
-import Play from './components/Play';
-import NewReleases from './components/NewReleases';
-import EditorPicks from './components/EditorPicks';
-import Artists from './components/Artists';
 import NewSongsAdded from './components/NewSongsAdded';
 import ListMusic from './components/ListMusic';
 import PlayList from './components/PlayList';
-import Pc from './screen/PC';
+import Pc from './pages/PC';
 
 function App() {
-  const [isExpanded, setIsExpanded] = useState(true);
-
-  const toggleView = () => {
-    setIsExpanded(!isExpanded);
-  };
-
   const [screenSize, setScreenSize] = useState('');
 
   useEffect(() => {
