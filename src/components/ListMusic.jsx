@@ -49,8 +49,8 @@ export default class ListMusic extends Component {
       <div className="m-0 p-0">
         <Slider {...settings} className="text-center">
           {items.map((item, index) => (
-            <div className="flex flex-col items-center justify-center hover:bg-[#303030] p-1 rounded-md duration-500 cursor-pointer" key={index}>
-              <img src={item.image} className="w-[100%] h-[120px] rounded-sm" />
+            <div className="flex flex-col items-center justify-center hover:bg-[#303030] p-1 pb-1 rounded-md duration-500 cursor-pointer" key={index}>
+              <img src={item.image} className="w-[100%] h-[100&] rounded-sm" />
               <p className="text-gray-50 font-medium text-[12px] mt-1 mx-auto text-center">
                 {item.title}
               </p>

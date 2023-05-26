@@ -47,7 +47,7 @@ function App() {
       <div className="w-full h-screen flex items-center justify-center">
         {screenSize === 'md' ? ( 
           <div className="h-[100%] w-[100%] bg-[#303030] p-3">
-            <div className="m-0 p-0 bg-[#232323] h-[100%] w-[100%] mx-auto rounded-md">
+            <div className="m-0 p-0 bg-[#232323] h-[100%] w-[100%] mx-auto rounded-md pb-3">
               <Header />
               <div className="m-0 p-0 overflow-y-scroll h-[78%] overflow-hidden">
                 <div className="flex w-full-center px-3 sm:px-6 items-center">
@@ -61,9 +61,44 @@ function App() {
                 <PlayList />
                 <div className='px-3 sm:px-6 mt-3'>
                   <NewSongsAdded />
-                  <ListMusic />
+
+                  <div className='mt-5'>
+                    <h1 className='text-gray-50 font-bold'>
+                      Recent Music
+                    </h1>
+                    <ListMusic />
+                  </div>
+
+                  <div className='mt-5'>
+                    <h1 className='text-gray-50 font-bold'>
+                      Most Played
+                    </h1>
+                    <ListMusic />
+                  </div>
+
+                  <div className='mt-5'>
+                    <h1 className='text-gray-50 font-bold'>
+                      Recently Added
+                    </h1>
+                    <ListMusic />
+                  </div>
+
+                  <div className='mt-5'>
+                    <h1 className='text-gray-50 font-bold'>
+                      Brazil is Listening
+                    </h1>
+                    <ListMusic />
+                  </div>
+
+                  <div className='mt-5'>
+                    <h1 className='text-gray-50 font-bold'>
+                      Made For Matheus Chiodi
+                    </h1>
+                    <ListMusic />
+                  </div>
+                  
                 </div>
-              </div>
+              </div> 
             </div>
             
           </div>
