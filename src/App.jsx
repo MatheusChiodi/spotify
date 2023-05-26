@@ -7,9 +7,8 @@ import Play from './components/Play';
 import NewReleases from './components/NewReleases';
 import EditorPicks from './components/EditorPicks';
 import Artists from './components/Artists';
-import { PlayCircle, PlusCircle } from 'lucide-react';
 import NewSongsAdded from './components/NewSongsAdded';
-import JumpBackIn from './components/JumpBackIn';
+import ListMusic from './components/ListMusic';
 import PlayList from './components/PlayList';
 
 function App() {
@@ -62,7 +61,7 @@ function App() {
                 <PlayList />
                 <div className='px-3 sm:px-6 mt-3'>
                   <NewSongsAdded />
-                  <JumpBackIn />
+                  <ListMusic />
                 </div>
               </div>
             </div>
