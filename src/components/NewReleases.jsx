@@ -7,31 +7,30 @@ export default class NewReleases extends Component {
   render() {
     const items = [
       {
-        image: 'perfil.jpeg',
-        title: 'Título da Música 1',
-        author: 'Autor'
+        image: 'img1.png',
+        title: 'Noites Estreladas',
+        author: 'Lucas Moraes',
       },
       {
-        image: 'perfil.jpeg',
-        title: 'Título da Música 2',
-        author: 'Autor'
+        image: 'img2.png',
+        title: 'Sombra e Luz',
+        author: 'Mariana Dias',
       },
       {
-        image: 'perfil.jpeg',
-        title: 'Título da Música 2',
-        author: 'Autor'
+        image: 'img3.png',
+        title: 'Rumo',
+        author: 'Pedro Navegantes',
       },
       {
-        image: 'perfil.jpeg',
-        title: 'Título da Música 2',
-        author: 'Autor'
+        image: 'img4.png',
+        title: 'Memórias',
+        author: 'Júlia Carvalho',
       },
       {
-        image: 'perfil.jpeg',
-        title: 'Título da Música 2',
-        author: 'Autor'
+        image: 'img5.png',
+        title: 'Amanhecer',
+        author: 'Banda Horizonte',
       },
-      // ... adicione mais objetos com as informações de cada item
     ];
 
     var settings = {
@@ -72,26 +71,31 @@ export default class NewReleases extends Component {
     };
     return (
       <>
-      <div>
-        <h1 className="text-gray-50 font-medium text-[18px] mb-1 ps-2">
-          New Releases
-        </h1>
-        <Slider {...settings} className="text-center">
-          {items.map((item, index) => (
-            <div className="flex flex-col items-center justify-center hover:bg-[#303030] p-1 rounded-md duration-500 cursor-pointer h-[150px]" key={index}>
-              <img src={item.image} className="w-[100px] h-[80px] rounded-xl" />
-              <p className="text-gray-50 font-medium text-[12px] mt-1 mx-auto text-center">
-                {item.title}
-              </p>
-              <p className="text-gray-400 text-[11px] mx-auto text-center">
-                {item.author}
-              </p>
-            </div>
-          ))}
-        </Slider>
-      </div>
+        <div>
+          <h1 className="text-gray-50 font-medium text-[18px] mb-1 ps-2">
+            New Releases
+          </h1>
+          <Slider {...settings} className="text-center">
+            {items.map((item, index) => (
+              <div
+                className="flex flex-col items-center justify-center hover:bg-[#303030] p-1 rounded-md duration-500 cursor-pointer h-[150px]"
+                key={index}
+              >
+                <img
+                  src={item.image}
+                  className="w-[100px] h-[80px] rounded-xl"
+                />
+                <p className="text-gray-50 font-medium text-[12px] mt-1 mx-auto text-center">
+                  {item.title}
+                </p>
+                <p className="text-gray-400 text-[11px] mx-auto text-center mt-[10px]">
+                  {item.author}
+                </p>
+              </div>
+            ))}
+          </Slider>
+        </div>
       </>
-      
     );
   }
 }

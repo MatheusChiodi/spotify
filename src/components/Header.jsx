@@ -2,6 +2,22 @@ import { Bell, History, Settings } from 'lucide-react';
 import { useState,useEffect  } from 'react';
 
 export default function Header() {
+
+  const [greeting, setGreeting] = useState('');
+
+  useEffect(() => {
+    const date = new Date();
+    const hour = date.getHours();
+
+    if (hour < 12) {
+      setGreeting('Good morning');
+    } else if (hour >= 12 && hour < 18) {
+      setGreeting('Good afternoon');
+    } else {
+      setGreeting('Good night');
+    }
+  }, []);	
+
   const [screenSize, setScreenSize] = useState('');
 
   useEffect(() => {
@@ -14,13 +30,11 @@ export default function Header() {
       }
     }
 
-    // Adiciona um event listener para atualizar o tamanho da tela sempre que a janela for redimensionada
+    
     window.addEventListener('resize', handleResize);
 
-    // Chama a função de redimensionamento para definir o tamanho da tela inicialmente
     handleResize();
 
-    // Remove o event listener quando o componente for desmontado
     return () => {
       window.removeEventListener('resize', handleResize);
     };
@@ -31,7 +45,7 @@ export default function Header() {
       {screenSize === 'md' ? ( 
         
         <>
-          <h1 className="text-[26px] flex font-bold">Good morning</h1>
+          <h1 className="text-[26px] flex font-bold">{greeting}</h1>
           <Bell className="w-[20px] h-[20px] cursor-pointer hover:text-gray-400 transition-all duration-500" />
           <History className="w-[20px] h-[20px] cursor-pointer hover:text-gray-400 transition-all duration-500" />
           <Settings className="w-[20px] h-[20px] cursor-pointer hover:text-gray-400 transition-all duration-500" />

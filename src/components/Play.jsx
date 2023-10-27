@@ -48,10 +48,10 @@ export default function Play() {
       <div className="w-full">
         <div className="flex justify-between w-full m-0 p-0">
           <div className="flex m-0 p-0">
-            <img src="perfil.jpeg" className="w-[50px] h-[50px] rounded-xl" />
+            <img src="logo.png" className="w-[50px] h-[50px] rounded-xl" />
             <div className="flex flex-col">
-              <p className="ms-3 font-medium text-[16px]">Titulo da musica</p>
-              <p className="ms-3 text-[15px] text-gray-200">Autor</p>
+              <p className="ms-3 font-medium text-[16px]">Novo Spotify</p>
+              <p className="ms-3 text-[15px] text-gray-200">Matheus Chiodi</p>
             </div>
           </div>
           <div className="flex flex-col justify-center items-center">

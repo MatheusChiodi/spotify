@@ -2,33 +2,33 @@ export default function PlayList() {
   const playList = [
     {
       id: 1,
-      name: 'Nome da PlayList',
-      image: 'perfil.jpeg',
+      name: 'Dual Game',
+      image: 'logo.png',
     },
     {
       id: 2,
-      name: 'Nome da PlayList',
-      image: 'perfil.jpeg',
+      name: 'Guaranteed Future',
+      image: 'img1.png',
     },
     {
       id: 3,
-      name: 'Nome da PlayList',
-      image: 'perfil.jpeg',
+      name: 'Pomodoro Timer',
+      image: 'img2.png',
     },
     {
       id: 4,
-      name: 'Nome da PlayList',
-      image: 'perfil.jpeg',
+      name: 'Training Record',
+      image: 'img3.png',
     },
     {
       id: 5,
-      name: 'Nome da PlayList',
-      image: 'perfil.jpeg',
+      name: 'Project Windows',
+      image: 'img4.png',
     },
     {
       id: 6,
-      name: 'Nome da PlayList',
-      image: 'perfil.jpeg',
+      name: 'Project Shop',
+      image: 'img5.png',
     },
   ];
 

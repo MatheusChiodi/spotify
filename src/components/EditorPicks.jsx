@@ -7,26 +7,25 @@ export default class EditorPicks extends Component {
   render() {
     const items = [
       {
-        image: 'perfil.jpeg',
-        title: 'Título da Música 1',
+        image: 'img1.png',
+        title: 'Vento Sereno',
       },
       {
-        image: 'perfil.jpeg',
-        title: 'Título da Música 2',
+        image: 'img2.png',
+        title: 'Sonhos Acordados',
       },
       {
-        image: 'perfil.jpeg',
-        title: 'Título da Música 2',
+        image: 'img3.png',
+        title: 'Maré Crescente',
       },
       {
-        image: 'perfil.jpeg',
-        title: 'Título da Música 2',
+        image: 'img4.png',
+        title: 'Silêncio das Montanhas',
       },
       {
-        image: 'perfil.jpeg',
-        title: 'Título da Música 2',
+        image: 'img5.png',
+        title: 'Luzes da Madrugada',
       },
-      // ... adicione mais objetos com as informações de cada item
     ];
 
     var settings = {
@@ -66,23 +65,28 @@ export default class EditorPicks extends Component {
     };
     return (
       <>
-      <div className="mt-3">
-      <h1 className="text-gray-50 font-medium text-[18px] mb-1 ps-2">
-        Editor's Picks
-      </h1>
-      <Slider {...settings} className="text-center">
-        {items.map((item, index) => (
-          <div className="flex flex-col items-center justify-center hover:bg-[#303030] p-1 rounded-md duration-500 cursor-pointer" key={index}>
-            <img src={item.image} className="w-[100px] h-[80px] rounded-xl" />
-            <p className="text-gray-50 font-medium text-[12px] mt-1 mx-auto text-center">
-              {item.title}
-            </p>
-          </div>
-        ))}
-      </Slider>
-    </div>
+        <div className="mt-3">
+          <h1 className="text-gray-50 font-medium text-[18px] mb-1 ps-2">
+            Editor's Picks
+          </h1>
+          <Slider {...settings} className="text-center">
+            {items.map((item, index) => (
+              <div
+                className="flex flex-col items-center justify-center hover:bg-[#303030] p-1 rounded-md duration-500 cursor-pointer h-[130px]"
+                key={index}
+              >
+                <img
+                  src={item.image}
+                  className="w-[100px] h-[80px] rounded-xl"
+                />
+                <p className="text-gray-50 font-medium text-[12px] mt-1 mx-auto text-center flex justify-center items-center h-[30px] w-[70px]">
+                  {item.title}
+                </p>
+              </div>
+            ))}
+          </Slider>
+        </div>
       </>
-      
     );
   }
 }

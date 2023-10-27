@@ -80,7 +80,7 @@ export default function NewSongsAdded() {
       </h1>
       <div className='w-[100%] flex mt-3 mb-2 items-center bg-[#303030] rounded-md hover:bg-[#373737] transition-all cursor-pointer duration-700'>
         <div className='w-[120px]'>
-          <img src='perfil.jpeg' className="w-[120px] h-[120px] rounded-s-md" />
+          <img src='logo.png' className="w-[120px] h-[120px] rounded-s-md" />
         </div>
         <div className='ms-3'>
           <h1 className='text-gray-50 font-bold text-[14px]'>Today-s Top Hits</h1>

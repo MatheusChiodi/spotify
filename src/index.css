@@ -9,15 +9,15 @@ body {
   background-size: cover;
 }
 
-/* Estilizando a barra de rolagem */
+
 ::-webkit-scrollbar {
-  width: 0px; /* Largura da barra de rolagem */
+  width: 0px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent; /* Cor do fundo da barra de rolagem */
+  background: transparent; 
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: transparent; /* Cor do thumb (botão) da barra de rolagem */
+  background-color: transparent;
 }

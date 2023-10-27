@@ -7,26 +7,25 @@ export default class Artists extends Component {
   render() {
     const items = [
       {
-        image: 'perfil.jpeg',
-        author: 'Autor'
+        image: 'img1.png',
+        author: 'Matheus Chiodi'
       },
       {
-        image: 'perfil.jpeg',
-        author: 'Autor'
+        image: 'img2.png',
+        author: 'Arthur Ribeiro'
       },
       {
-        image: 'perfil.jpeg',
-        author: 'Autor'
+        image: 'img3.png',
+        author: 'José Guerra'
       },
       {
-        image: 'perfil.jpeg',
-        author: 'Autor'
+        image: 'img4.png',
+        author: 'Rian Henrique'
       },
       {
-        image: 'perfil.jpeg',
-        author: 'Autor'
+        image: 'img5.png',
+        author: 'Brenda Vs'
       },
-      // ... adicione mais objetos com as informações de cada item
     ];
 
     var settings = {
