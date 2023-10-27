@@ -114,7 +114,7 @@ export default function NewSongsAdded() {
           </div>
         </div>
         {isPlaying ? (
-          <div className="absolute bottom-0 inset-x-0 flex flex-col items-center justify-center w-[300px] mx-auto bg-[#303030] border-x border-t border-gray-500 rounded-t-md">
+          <div className="absolute bottom-0 inset-x-0 flex flex-col items-center justify-center w-[300px] mx-auto bg-[#303030] border-x border-t border-gray-500 rounded-t-md z-50">
             <div className="flex items-center justify-center mt-1">
               <SkipBack
                 size={20}
