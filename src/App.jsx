@@ -47,7 +47,7 @@ function App() {
       {screenSize === 'md' ? (
         <div className="w-[100%] h-screen bg-[#232323] p-3 border-[#303030] border-[8px] rounded-lg">
           <Header />
-          <div className="m-0 p-0 overflow-y-scroll h-[80%] overflow-hidden">
+          <div className="m-0 p-0">
             <div className="flex w-full-center px-3 sm:px-6 items-center">
               <p className="text-[12px] text-gray-200 bg-[#303030] px-3 sm:px-6 py-[1px] rounded-xl hover:bg-[#373737] transition-all cursor-pointer duration-700">
                 Music
