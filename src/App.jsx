@@ -68,34 +68,6 @@ function App() {
                     </h1>
                     <ListMusic />
                   </div>
-
-                  <div className='mt-5'>
-                    <h1 className='text-gray-50 font-bold'>
-                      Most Played
-                    </h1>
-                    <ListMusic />
-                  </div>
-
-                  <div className='mt-5'>
-                    <h1 className='text-gray-50 font-bold'>
-                      Recently Added
-                    </h1>
-                    <ListMusic />
-                  </div>
-
-                  <div className='mt-5'>
-                    <h1 className='text-gray-50 font-bold'>
-                      Brazil is Listening
-                    </h1>
-                    <ListMusic />
-                  </div>
-
-                  <div className='mt-5'>
-                    <h1 className='text-gray-50 font-bold'>
-                      Made For Matheus Chiodi
-                    </h1>
-                    <ListMusic />
-                  </div>
                 </div>
               </div> 
             </div>
