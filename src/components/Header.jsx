@@ -72,7 +72,7 @@ export default function Header() {
         <p className="text-[16px] hover:text-green-500 duration-300 cursor-pointer">
           Matheus Chiodi
         </p>
-        <img src="perfil.jpeg" className="w-[40px] h-[40px] cursor-pointer " />
+        <img src="logo.png" className="w-[40px] h-[40px] cursor-pointer " />
         </>
       )}
     </div>
