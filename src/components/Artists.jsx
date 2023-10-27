@@ -72,7 +72,7 @@ export default class Artists extends Component {
       <Slider {...settings} className="text-center">
         {items.map((item, index) => (
           <div className="flex flex-col items-center justify-center hover:bg-[#303030] p-1 rounded-md duration-500 cursor-pointer" key={index}>
-            <img src={item.image} className="w-[100px] h-[80px] rounded-xl" />
+            <img src={item.image} className="w-[100px] h-[80px] rounded-xl mx-auto" />
             <p className="text-gray-400 text-[11px] mx-auto text-center">
               {item.author}
             </p>

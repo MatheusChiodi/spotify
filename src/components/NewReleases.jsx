@@ -83,7 +83,7 @@ export default class NewReleases extends Component {
               >
                 <img
                   src={item.image}
-                  className="w-[100px] h-[80px] rounded-xl"
+                  className="w-[100px] h-[80px] rounded-xl mx-auto"
                 />
                 <p className="text-gray-50 font-medium text-[12px] mt-1 mx-auto text-center">
                   {item.title}
