@@ -1,4 +1,4 @@
-import { useState,useEffect  } from 'react';
+import { useState, useEffect } from 'react';
 
 import Header from './components/Header';
 import TypesMusic from './components/TypesMusic';
@@ -44,36 +44,33 @@ function App() {
 
   return (
     <>
-      <div className="w-full h-screen flex items-center justify-center">
-        {screenSize === 'md' ? ( 
-          <div className="w-[100%] h-[100%] bg-[#303030] p-3 flex items-center justify-center">
-            <div className="m-0 p-0 bg-[#232323] h-auto w-[100%] mx-auto rounded-md">
-              <Header />
-              <div className="m-0 p-0 overflow-y-scroll h-[80%] overflow-hidden">
-                <div className="flex w-full-center px-3 sm:px-6 items-center">
-                  <p className="text-[12px] text-gray-200 bg-[#303030] px-3 sm:px-6 py-[1px] rounded-xl hover:bg-[#373737] transition-all cursor-pointer duration-700">
-                    Music
-                  </p>
-                  <p className="text-[12px] ms-4 text-gray-200 bg-[#303030] px-3 sm:px-6 py-[1px] rounded-xl hover:bg-[#373737] transition-all cursor-pointer duration-700">
-                    Podcasts & Shows
-                  </p>
-                </div>
-                <PlayList />
-                <div className='px-3 sm:px-6 mt-3'>
-                  <NewSongsAdded />
+      {screenSize === 'md' ? (
+        <div className="w-[100%] h-screen bg-[#303030] p-3 flex items-center justify-center">
+          <div className="m-0 p-0 bg-[#232323] h-auto w-[100%] mx-auto rounded-md">
+            <Header />
+            <div className="m-0 p-0 overflow-y-scroll h-[80%] overflow-hidden">
+              <div className="flex w-full-center px-3 sm:px-6 items-center">
+                <p className="text-[12px] text-gray-200 bg-[#303030] px-3 sm:px-6 py-[1px] rounded-xl hover:bg-[#373737] transition-all cursor-pointer duration-700">
+                  Music
+                </p>
+                <p className="text-[12px] ms-4 text-gray-200 bg-[#303030] px-3 sm:px-6 py-[1px] rounded-xl hover:bg-[#373737] transition-all cursor-pointer duration-700">
+                  Podcasts & Shows
+                </p>
+              </div>
+              <PlayList />
+              <div className="px-3 sm:px-6 mt-3">
+                <NewSongsAdded />
 
-                  <div className='mt-5'>
-                    <h1 className='text-gray-50 font-bold'>
-                      Recent Music
-                    </h1>
-                    <ListMusic />
-                  </div>
+                <div className="mt-5">
+                  <h1 className="text-gray-50 font-bold">Recent Music</h1>
+                  <ListMusic />
                 </div>
-              </div> 
+              </div>
             </div>
-            
           </div>
-        ) : (
+        </div>
+      ) : (
+        <div className="w-full h-screen flex items-center justify-center">
           <div className="h-[80%] w-[90%] xl:w-[60%] bg-[#303030] rounded-3xl p-3">
             <div className="m-0 p-0 bg-[#232323] h-[100%] w-[100%] mx-auto rounded-md">
               <div className="h-[14%]">
@@ -99,14 +96,19 @@ function App() {
                 <div className="flex flex-col w-1/2 h-[99%] overflow-y-auto scrollbar-hide">
                   <div
                     id="right"
-                    className={`m-0 p-0 w-full transition-opacity duration-500 ${isExpanded ? 'h-[60px]' : 'hidden'}`}
+                    className={`m-0 p-0 w-full transition-opacity duration-500 ${
+                      isExpanded ? 'h-[60px]' : 'hidden'
+                    }`}
                   >
                     <NewReleases />
                     <EditorPicks />
                     <Artists />
                   </div>
 
-                  <div id="musics" className={`text-gray-50 ${isExpanded ? 'hidden' : ''}`}>
+                  <div
+                    id="musics"
+                    className={`text-gray-50 ${isExpanded ? 'hidden' : ''}`}
+                  >
                     <Music />
                     <Music />
                   </div>
@@ -114,8 +116,8 @@ function App() {
               </div>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </>
   );
 }
