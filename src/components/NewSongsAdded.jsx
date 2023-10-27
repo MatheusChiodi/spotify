@@ -1,4 +1,10 @@
-import { PauseCircle, PlayCircle, PlusCircle, SkipBack, SkipForward } from 'lucide-react';
+import {
+  PauseCircle,
+  PlayCircle,
+  PlusCircle,
+  SkipBack,
+  SkipForward,
+} from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 
 export default function NewSongsAdded() {
@@ -75,20 +81,23 @@ export default function NewSongsAdded() {
 
   return (
     <>
-      <h1 className='text-gray-50 font-bold'>
-        New songs added
-      </h1>
-      <div className='w-[100%] flex mt-3 mb-2 items-center bg-[#303030] rounded-md hover:bg-[#373737] transition-all cursor-pointer duration-700'>
-        <div className='w-[120px]'>
-          <img src='logo.png' className="w-[120px] h-[120px] rounded-s-md" />
+      <h1 className="text-gray-50 font-bold">New songs added</h1>
+      <div className="w-[100%] flex mt-3 mb-2 items-center bg-[#303030] rounded-md hover:bg-[#373737] transition-all cursor-pointer duration-700">
+        <div className="w-[120px]">
+          <img src="logo.png" className="w-[120px] h-[120px] rounded-s-md" />
         </div>
-        <div className='ms-3'>
-          <h1 className='text-gray-50 font-bold text-[14px]'>Today-s Top Hits</h1>
-          <p className='text-gray-500 text-[10px] pe-3'>
+        <div className="ms-3">
+          <h1 className="text-gray-50 font-bold text-[14px]">
+            Today-s Top Hits
+          </h1>
+          <p className="text-gray-500 text-[10px] pe-3">
             Playlist • Bad Bunny is on top of the Hottest 50!
           </p>
-          <div className='flex justify-between items-center pe-2 mt-2'>
-            <PlusCircle className='text-gray-500 hover:text-gray-50 transition-all cursor-pointer duration-700' size={20} />
+          <div className="flex justify-between items-center pe-2 mt-2">
+            <PlusCircle
+              className="text-gray-500 hover:text-gray-50 transition-all cursor-pointer duration-700"
+              size={20}
+            />
             {isPlaying ? (
               <PauseCircle
                 size={30}
