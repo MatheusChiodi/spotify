@@ -46,8 +46,8 @@ function App() {
     <>
       <div className="w-full h-screen flex items-center justify-center">
         {screenSize === 'md' ? ( 
-          <div className="w-[100%] h-[90%] bg-[#303030] p-3">
-            <div className="m-0 p-0 bg-[#232323] h-[100%] w-[100%] mx-auto rounded-md">
+          <div className="w-[100%] bg-[#303030] p-3">
+            <div className="m-0 p-0 bg-[#232323] h-auto w-[100%] mx-auto rounded-md">
               <Header />
               <div className="m-0 p-0 overflow-y-scroll h-[90%] overflow-hidden">
                 <div className="flex w-full-center px-3 sm:px-6 items-center">
